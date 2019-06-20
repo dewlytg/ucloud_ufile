@@ -16,4 +16,4 @@ ADD crontab /etc/cron.d/root
 RUN chmod 0644 /etc/cron.d/root
 RUN touch /var/log/cron.log
 
-ENTRYPOINT [ "/usr/sbin/crond", "-f", "-c", "/etc/cron.d" ]
+ENTRYPOINT [ "/usr/sbin/cron", "-f", "/etc/cron.d" ]
