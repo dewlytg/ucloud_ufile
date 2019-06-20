@@ -1,5 +1,5 @@
 #Image base
-FROM vaeum/alpine-python3-pip3
+FROM ubuntu:16.04
 
 #User info
 MAINTAINER dewly_tg@163.com
