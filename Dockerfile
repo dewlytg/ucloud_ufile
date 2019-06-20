@@ -12,11 +12,8 @@ RUN apt-get update  && \
 #pip3 install depended
 RUN pip3 install ufile
 
-# 创建 log 文件
+ADD crontab /etc/cron.d/root
+RUN chmod 0644 /etc/cron.d/root
 RUN touch /var/log/cron.log
 
-ADD entrypoint.sh .
-# crontab 的相关命令
-RUN chmod 777 ./entrypoint.sh
-
-ENTRYPOINT ["./entrypoint.sh"]
+ENTRYPOINT [ "/usr/sbin/crond", "-f", "-c", "/etc/cron.d" ]
