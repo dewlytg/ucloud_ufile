@@ -24,5 +24,5 @@ RUN crontab /etc/cron.d/hello-cron
 # Create the log file to be able to run tail
 RUN touch /var/log/cron.log
 
-# Run the command on container startup
+# Run the command on container startup 1
 CMD cron && tail -f /var/log/cron.log
